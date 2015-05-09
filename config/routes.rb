@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
+
+  get 'static_pages/directory'
+
+  get 'static_pages/contribute'
+
+  get 'static_pages/contact'
+
+  get 'static_pages/about'
+
+  get 'static_pages/feedback'
+
+  root 'users#index'
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
