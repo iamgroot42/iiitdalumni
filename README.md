@@ -1,7 +1,7 @@
 # iiitdalumni
 IIITD Alumni Website
 
-Home page : consists of recent news,activities and events.The following links are present on the home page:
+Home page : consists of recent news,activities and events (a carousel,maybe? ).The following links are present on the home page:
 -About IIITD AA
 -Groups/Fora
 -News (seems redundant,as it is already present in the news feed)
