@@ -13,3 +13,5 @@ Along with these, we have a user-login/signup button opening a login-window (in 
 
 On the footer, we have home, top of page, about, contact, IIITD website, copyright statement.
 Testing merge
+
+POTATO
