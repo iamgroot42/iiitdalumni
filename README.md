@@ -12,3 +12,4 @@ Home page : consists of recent news,activities and events (a carousel,maybe? ).T
 Along with these, we have a user-login/signup button opening a login-window (in a modal). A search bar for looking up people would be nice.
 
 On the footer, we have home, top of page, about, contact, IIITD website, copyright statement.
+Testing merge
