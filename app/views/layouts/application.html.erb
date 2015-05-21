@@ -9,8 +9,7 @@
 	<body>
 		<%= render 'layouts/header' %>
 		<div class="container">
-			<p class="notice" style="background-color:inherit;"><%= notice %></p>
-	        <p class="alert" style="background-color:inherit;"><%= alert %></p>
+			<%= render 'layouts/messages' %>
 			<%= yield %>
 		</div>
 		<div class="row">

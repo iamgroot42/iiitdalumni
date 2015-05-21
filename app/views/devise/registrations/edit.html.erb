@@ -1,5 +1,5 @@
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put ,class: "form-horizontal"}) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put ,class: "form-horizontal user"}) do |f| %>
   <%= devise_error_messages! %>
 
   <fieldset>
@@ -10,21 +10,18 @@
     <div class="col-lg-10">
       <%= f.text_field :name, :class => 'form-control' %>
     </div>
-    <%= error_span(@user[:name]) %>
   </div>
   <div class="form-group">
     <%= f.label 'Year of joining', :class => 'col-lg-2 control-label' %>
     <div class="col-lg-10">
       <%= f.select :YOJ,  options_for_select((2008..Time.now.year).step(1).to_a.map{|s| ["#{s}", s]}),{},{ :class => 'form-control' } %>
     </div>
-    <%= error_span(@user[:YOJ]) %>
   </div>
   <div class="form-group">
     <%= f.label :YOL, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-10">
       <%= f.select :YOL,  options_for_select((2012..Time.now.year).step(1).to_a.map{|s| ["#{s}", s]}),{},{ :class => 'form-control' } %>
     </div>
-    <%= error_span(@user[:YOL]) %>
   </div>
   <div class="form-group">
     <%= f.label :alumni, :class => 'col-lg-2 control-label' %>
@@ -37,63 +34,54 @@
     <div class="col-lg-10">
       <%= f.text_field :pursued, :class => 'form-control' %>
     </div>
-    <%= error_span(@user[:pursued]) %>
   </div>
   <div class="form-group">
     <%= f.label :description, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-10">
       <%= f.text_area :description, :class => 'form-control' %>
     </div>
-    <%= error_span(@user[:description]) %>
   </div>
   <div class="form-group">
     <%= f.label :current_designation, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-10">
       <%= f.text_field :current_designation, :class => 'form-control' %>
     </div>
-    <%= error_span(@user[:current_designation]) %>
   </div>
   <div class="form-group">
     <%= f.label :company_or_institution, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-10">
       <%= f.text_field :company_or_institution, :class => 'form-control' %>
     </div>
-    <%= error_span(@user[:company_or_institution]) %>
   </div>
   <div class="form-group">
     <%= f.label :dp_url, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-10">
       <%= f.text_field :dp_url, :class => 'form-control' %>
     </div>
-    <%= error_span(@user[:dp_url]) %>
   </div>
   <div class="form-group">
     <%= f.label :blog_url, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-10">
       <%= f.text_field :blog_url, :class => 'form-control' %>
     </div>
-    <%= error_span(@user[:blog_url]) %>
   </div>
   <div class="form-group">
     <%= f.label :ld_url, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-10">
       <%= f.text_field :ld_url, :class => 'form-control' %>
     </div>
-    <%= error_span(@user[:ld_url]) %>
   </div>
   <div class="form-group">
     <%= f.label :rollno, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-10">
       <%= f.text_field :rollno, :class => 'form-control' %>
     </div>
-    <%= error_span(@user[:rollno]) %>
   </div>
   <div class="form-group">
     <%= f.label :phone, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-10">
       <%= f.text_field :phone, :class => 'form-control' %>
     </div>
-    <%= error_span(@user[:phone]) %>
   </div>
 
   <div class="form-group">
@@ -101,7 +89,6 @@
     <div class="col-lg-10">
     <%= f.email_field :email, autofocus: true , :class => 'form-control'%>
     </div>
-    <%= error_span(@user[:email]) %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -134,6 +121,7 @@
   <div class="actions">
     <%= f.submit "Update" ,class: "btn btn-primary"%>
   </div>
+  </fieldset>
 <% end %>
 
 <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete ,class: "btn btn-danger"%>
