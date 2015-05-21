@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   get 'static_pages/feedback'
 
   devise_for :users
-  get 'users/index'
   get 'users/show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

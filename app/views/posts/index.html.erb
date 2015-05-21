@@ -6,13 +6,16 @@
         <div class="container" style="border-bottom: 2px solid gray;max-width:800px;padding:20px;">
         <div class="row">
           <div class="col-md-6">
-          &nbsp;<%= post.id %>
+            <%= image_tag(post.image_url,style: "max-height:220px;max-width:inherit;") %>
           </div>
           <div class="col-md-6">
             <h1 style="font-weight:bold;"><%= post.title %></h1>
             <p>
               <%= truncate(post.content, :length => 150) %>... | <%= link_to "Read More",post_path(post) %>
             </p>
+            <% if post.user_id == current_user.id %>
+              <%= link_to "Edit",edit_post_path(post) %> | <%= link_to "Delete", post_path(post), method: :delete %>
+            <% end %>
           </div>
         </div>
         </div>
