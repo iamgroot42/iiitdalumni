@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   def index
   end
 
+  def show
+  	@user = current_user
+  end
+  
   protected
 
   def configure_permitted_parameters

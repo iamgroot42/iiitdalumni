@@ -1,26 +1,111 @@
 <h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+<%= form_for(resource, as: resource_name,class: "form-horizontal", url: session_path(resource_name)) do |f| %>
+  <div class="form-group">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
+    <div class="form-group">
+      <%= f.check_box :remember_me, class: "form-control" %>
       <%= f.label :remember_me %>
     </div>
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: "form-control" %>
   </div>
 <% end %>
 
 <%= render "users/shared/links" %>
+<form class="form-horizontal">
+    <fieldset>
+        <legend>Legend</legend>
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-10">
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+            <div class="col-lg-10">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Checkbox
+                    </label>
+                </div>
+                <br>
+                <div class="togglebutton">
+                    <label>
+                        <input type="checkbox" checked=""> Toggle button
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputFile" class="col-lg-2 control-label">File</label>
+            <div class="col-lg-10">
+                <input type="text" readonly="" class="form-control floating-label" placeholder="Browse...">
+                <input type="file" id="inputFile" multiple="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="textArea" class="col-lg-2 control-label">Textarea</label>
+            <div class="col-lg-10">
+                <textarea class="form-control" rows="3" id="textArea"></textarea>
+                <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Radios</label>
+            <div class="col-lg-10">
+                <div class="radio radio-primary">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                        Option one is this
+                    </label>
+                </div>
+                <div class="radio radio-primary">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        Option two can be something else
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="select" class="col-lg-2 control-label">Selects</label>
+            <div class="col-lg-10">
+                <select class="form-control" id="select">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <br>
+                <select multiple="" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
