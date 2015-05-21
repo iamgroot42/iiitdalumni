@@ -7,47 +7,9 @@
   		<%= csrf_meta_tags %>
 	</head>
 	<body>
-	<!-- 	Main Element for Full width
-	<div id="nav-bar-main" class="row navbar-fixed-top">
-	    <div class="container">
-	        Element for actual navbar
-
-	        <div class="row">
-	            <div class="pull-left">
-	                <a href="index.html"><img src="static/alumniportal/img/alumni-logo.png" style="height:50px;margin-top:15px;"/></a>
-	            </div>
-	            <div id="nav-bar" class="pull-right">
-	                <ul>
-	                    <a href="/"><li class="glyphicon glyphicon-home"><span class="nav-bar-font">Home</span></li></a>
-	                    <a href="/static_pages/news"><li class="glyphicon glyphicon-globe"><span class="nav-bar-font">News</span></li></a>
-	                    <a href="#"><li class="glyphicon glyphicon-pencil"><span class="nav-bar-font">Blog</span></li></a>
-	                    <a href="/static_pages/directory"><li class="glyphicon glyphicon-user"><span class="nav-bar-font">Directory</span></li></a>
-	                    <a href="http://payments.iiitd.edu.in/pg/fees/giveback.php"><li class="glyphicon glyphicon-repeat"><span class="nav-bar-font">Give Back</span></li></a>
-	                    <a href="/static_pages/contact"><li class="glyphicon glyphicon-comment"><span class="nav-bar-font">Contact Us</span></li></a>
-	                </ul>
-	            </div>
-	        </div>
-	    </div>
-</div> -->
-		<div class="navbar navbar-fixed" style="padding:8px;padding-left:20px;">
-			<div class="container-fluid"><div class="row">
-			<div class="pull-left">
-        		<%= link_to image_tag("alumni-logo-2.png",height: "50px"),root_path %>
-        	</div>
-        	<div class="pull-right">
-        			<%= link_to "Home",root_path,class: "btn btn-default" %>
-        			<%= link_to "News","#",class: "btn btn-default" %>
-        			<%= link_to "Blog",root_path,class: "btn btn-default" %>
-        			<%= link_to "Directory",static_pages_directory_path,class: "btn btn-default" %>
-        			<%= link_to "Give Back",static_pages_contribute_path,class: "btn btn-default" %>
-        			<%= link_to "Contact Us",static_pages_contact_path,class: "btn btn-default" %>
-        		</div>
-        	</div>
-        	</div></div>
-        </div>
+		<%= render 'layouts/header' %>
 		<div class="container">
-			<p class="notice" style="background-color:inherit;"><%= notice %></p>
-	        <p class="alert" style="background-color:inherit;"><%= alert %></p>
+			<%= render 'layouts/messages' %>
 			<%= yield %>
 		</div>
 		<div class="row">
