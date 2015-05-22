@@ -12,6 +12,12 @@ Home page : consists of recent news,activities and events (a carousel,maybe? ).T
 Along with these, we have a user-login/signup button opening a login-window (in a modal). A search bar for looking up people would be nice.
 
 On the footer, we have home, top of page, about, contact, IIITD website, copyright statement.
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	Testing merge
+=======
+>>>>>>> a8d9e729876dd35fbf47a0efdb07193909fb0f2c
 
 To run the website on your PC:<br/>
 (Preferably Ubuntu)<br/>
@@ -23,3 +29,7 @@ To run the website on your PC:<br/>
 6. If want sample users, Do rake db:seed<br/>
 7. run rails server (ensure that no other server is running on localhost:3000)<br/>
 8. go to http://localhost:3000<br/>
+<<<<<<< HEAD
+>>>>>>> master
+=======
+>>>>>>> a8d9e729876dd35fbf47a0efdb07193909fb0f2c
