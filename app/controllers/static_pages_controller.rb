@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
 
   def directory
   	#@users=User.paginate(page: params[:page], :per_page => 20)
-    @users = User.all.order(created_at: :desc)
+    @users = User.all.order(rollno: :desc)
   end
 
   def contribute
