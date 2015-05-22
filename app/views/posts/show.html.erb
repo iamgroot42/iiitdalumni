@@ -1,8 +1,9 @@
 <h1> <%= @post.title %> </h1>
 <hr>
 
-<% if @post.image_url.present? %><%= image_tag @post.image_url,class: 'pull-left',style: "margin:10px"%><% end %>
-<font color="gray">
+<% if @post.image_url.present? %>
+<%= image_tag @post.image_url, class: 'pull-left',style: "margin:2px" %><% end %>
+<font color="#57575757">
 <%= User.find(@post.user_id).name %>
 <br/> <%= time_ago_in_words(@post.created_at) %> <br/>
 <br/>

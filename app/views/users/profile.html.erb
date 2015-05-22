@@ -1,11 +1,9 @@
 <%- model_class = User -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h1><%=t '.title', :default => @user.name %></h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @user.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:YOJ) %>:</strong></dt>
   <dd><%= @user.YOJ %></dd>
   <dt><strong><%= model_class.human_attribute_name(:YOL) %>:</strong></dt>
