@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
   validates :pursued, presence: true
   validates :rollno, presence: true, uniqueness: true
   validates :phone, length: {is: 10} #Flawed
+  validates :dp_url, format: {with: /([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i }
   has_many :posts
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable  
 end
