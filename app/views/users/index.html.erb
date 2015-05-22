@@ -33,37 +33,37 @@
     </tr>
   </thead>
   <tbody>
-    <%= @users.each do |user| %>
+    <%= @users.each do |x| %>
       <tr>
-        <td><%= link_to user.id, user_path(user) %></td>
-        <td><%= user.name %></td>
-        <td><%= user.YOJ %></td>
-        <td><%= user.YOL %></td>
-        <td><%= user.alumni %></td>
-        <td><%= user.pursued %></td>
-        <td><%= user.description %></td>
-        <td><%= user.current_designation %></td>
-        <td><%= user.company_or_institution %></td>
-        <td><%= user.email %></td>
-        <td><%= user.encrypted_password %></td>
-        <td><%= user.reset_password_token %></td>
-        <td><%= user.reset_password_sent_at %></td>
-        <td><%= user.remember_created_at %></td>
-        <td><%= user.current_sign_in_at %></td>
-        <td><%= user.last_sign_in_at %></td>
-        <td><%= user.current_sign_in_ip %></td>
-        <td><%= user.last_sign_in_ip %></td>
-        <td><%= user.dp_url %></td>
-        <td><%= user.blog_url %></td>
-        <td><%= user.ld_url %></td>
-        <td><%= user.rollno %></td>
-        <td><%= user.phone %></td>
-        <td><%=l user.created_at %></td>
+        <td><%= link_to x.id, user_path(x) %></td>
+        <td><%= x.name %></td>
+        <td><%= x.YOJ %></td>
+        <td><%= x.YOL %></td>
+        <td><%= x.alumni %></td>
+        <td><%= x.pursued %></td>
+        <td><%= x.description %></td>
+        <td><%= x.current_designation %></td>
+        <td><%= x.company_or_institution %></td>
+        <td><%= x.email %></td>
+        <td><%= x.encrypted_password %></td>
+        <td><%= x.reset_password_token %></td>
+        <td><%= x.reset_password_sent_at %></td>
+        <td><%= x.remember_created_at %></td>
+        <td><%= x.current_sign_in_at %></td>
+        <td><%= x.last_sign_in_at %></td>
+        <td><%= x.current_sign_in_ip %></td>
+        <td><%= x.last_sign_in_ip %></td>
+        <td><%= x.dp_url %></td>
+        <td><%= x.blog_url %></td>
+        <td><%= x.ld_url %></td>
+        <td><%= x.rollno %></td>
+        <td><%= x.phone %></td>
+        <td><%= x.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_user_path(user), :class => 'btn btn-default btn-xs' %>
+                      edit_user_path(x), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      user_path(user),
+                      user_path(x),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>

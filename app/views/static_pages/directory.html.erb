@@ -1,4 +1,13 @@
-<h1>Directory</h1>
-<%= link_to "Click Here",users_index_path %>
-to see the full directory
-<p> For now,ofc </p>
+<h1> Users </h1>
+<br>
+<%= will_paginate @users %>
+<ul>
+<% @users.each do |x| %>
+<li>
+	<h5><%= link_to x.name, "/" %></h5>
+	<%= x.YOL %>
+</li>
+<% end %>
+</ul>
+<%= will_paginate @users %>
+
