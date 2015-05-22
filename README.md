@@ -1,3 +1,8 @@
+BUGS LIST (ACTIVE):
+-On opening the sign-up page and then reloading the same page, the 'Remember Me' checkbox dissapears.
+-Button formatting on almost all pages is screwed up
+-any URL is accepted for LinkedIn and Blog 
+
 # iiitdalumni
 IIITD Alumni Website
 
@@ -12,24 +17,14 @@ Home page : consists of recent news,activities and events (a carousel,maybe? ).T
 Along with these, we have a user-login/signup button opening a login-window (in a modal). A search bar for looking up people would be nice.
 
 On the footer, we have home, top of page, about, contact, IIITD website, copyright statement.
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-	Testing merge
-=======
->>>>>>> a8d9e729876dd35fbf47a0efdb07193909fb0f2c
 
-To run the website on your PC:<br/>
-(Preferably Ubuntu)<br/>
-1. Install Rails<br/>
-2. Clone the repo<br/>
-3. CD to the directory<br/>
-4. Do bundle install<br/>
-5. Do rake db:migrate<br/>
-6. If want sample users, Do rake db:seed<br/>
-7. run rails server (ensure that no other server is running on localhost:3000)<br/>
-8. go to http://localhost:3000<br/>
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> a8d9e729876dd35fbf47a0efdb07193909fb0f2c
+To run the website on your PC:
+(Preferably Ubuntu)
+1. Install Rails
+2. Clone the repo
+3. CD to the directory
+4. Do bundle install
+5. Do rake db:migrate
+6. If want sample users, Do rake db:seed
+7. run rails server (ensure that no other server is running on localhost:3000)
+8. go to http://localhost:3000
