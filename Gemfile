@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 #Added by Anshuman for pagination in Directory page
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
-
+gem 'faker'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 gem 'thin'
