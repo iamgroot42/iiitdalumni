@@ -14,23 +14,22 @@
       </div>
     </div>
   <% end %>
-
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'form-control' %>
+    </div>
+  </div>
   <div class="control-group">
     <%= f.label :content, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :content, :class => 'form-control' %>
+      <%= f.text_area :content, :class => 'form-control',:rows => 10 %>
     </div>
   </div>
   <div class="control-group" style="display:none;">
     <%= f.label :user_id, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :user_id, :class => 'form-control' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :title, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :title, :class => 'form-control' %>
     </div>
   </div>
   <div class="control-group">
