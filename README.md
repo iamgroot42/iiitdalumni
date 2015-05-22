@@ -18,7 +18,7 @@ To run the website on your PC:<br/>
 1. Install Rails<br/>
 2. Clone the repo<br/>
 3. CD to the directory<br/>
-4. Do bundle instal<br/>
+4. Do bundle install<br/>
 5. Do rake db:migrate<br/>
 6. If want sample users, Do rake db:seed<br/>
 7. run rails server (ensure that no other server is running on localhost:3000)<br/>
