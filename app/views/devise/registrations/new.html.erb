@@ -29,7 +29,7 @@
   <div class="form-group">
     <%= f.label :pursued, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-10">
-      <%= f.text_field :pursued, :class => 'form-control' %>
+      <%= f.select :pursued, options_for_select({"B.Tech(CSE)" => "B.Tech(CSE)","B.Tech(ECE)" => "B.Tech(ECE)","M.Tech(CSE)" => "M.Tech(CSE)","M.Tech(ECE)" => "M.Tech(ECE)","M.Tech(CB)" => "M.Tech(CB)","Ph.D(CSE)" => "Ph.D(CSE)","Ph.D(ECE)" =>"Ph.D(ECE)","Ph.D(CB)" => "Ph.D(CB)"},"B.Tech(CSE)"),{},{ :class => 'form-control'} %>
     </div>
   </div>
   <div class="form-group">
