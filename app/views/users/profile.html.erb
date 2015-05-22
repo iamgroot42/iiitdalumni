@@ -4,9 +4,9 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:YOJ) %>:</strong></dt>
+  <dt><strong><%= "Year of Joining" %>:</strong></dt>
   <dd><%= @user.YOJ %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:YOL) %>:</strong></dt>
+  <dt><strong><%= "Year of Leaving" %>:</strong></dt>
   <dd><%= @user.YOL %></dd>
   <dt><strong><%= model_class.human_attribute_name(:alumni) %>:</strong></dt>
   <dd><%= @user.alumni %></dd>
@@ -16,21 +16,23 @@
   <dd><%= @user.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:current_designation) %>:</strong></dt>
   <dd><%= @user.current_designation %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:company_or_institution) %>:</strong></dt>
+  <dt><strong><%= "Company/Institution" %>:</strong></dt>
   <dd><%= @user.company_or_institution %></dd>
   <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
   <dd><%= @user.email %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:dp_url) %>:</strong></dt>
+  <dt><strong><%= "Profile pic URL" %>:</strong></dt>
   <dd><%= @user.dp_url %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:blog_url) %>:</strong></dt>
+  <dt><strong><%= "Blog URL" %>:</strong></dt>
   <dd><%= @user.blog_url %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:ld_url) %>:</strong></dt>
+  <dt><strong><%= "LinkedIn URL" %>:</strong></dt>
   <dd><%= @user.ld_url %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:rollno) %>:</strong></dt>
+  <dt><strong><%= "Roll number" %>:</strong></dt>
   <dd><%= @user.rollno %></dd>
   <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
   <dd><%= @user.phone %></dd>
 </dl>
 
+<% #if @user.admin? %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_registration_path(@user), :class => 'btn btn-default' %>
+              edit_registration_path(@user), :class => 'btn btn-primary' %>
+<% #end %>

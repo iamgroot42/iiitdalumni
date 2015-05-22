@@ -1,6 +1,7 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {class: "form-horizontal"}) do |f| %>
   <fieldset>
-  <legend>Sign in</legend>
+  <legend><h1 align="center">Sign in</h1></legend>
+  <br>
   <div class="form-group">
     <%= f.label :email ,class: "col-lg-2 control-label"%>
     <div class="col-lg-10">
@@ -29,7 +30,7 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in", class: "btn btn-primary" %>
+    <%= f.submit "Log in", class: "btn btn-success pull-left" %>
   </div>
 <% end %>
 
