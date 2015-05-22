@@ -3,8 +3,8 @@
 
 
 <% @users.each do |x| %>
-<div class="panel panel-primary" style="width:30%;float:left;margin:10px">
-	<%= image_tag x.dp_url,class: "pull-right img-circle",width: "80px",height: "80px" %>
+<div class="panel panel-primary" style="width:30%;height:85px;float:left;margin:10px">
+	<%= image_tag x.dp_url,class: "pull-right",width: "85px",height: "85px" %>
     <div class="panel-heading">
         <h3 class="panel-title">
         <% if user_signed_in? %>
@@ -23,5 +23,6 @@
     </div>
 </div>
 <% end %>
+
 
 
