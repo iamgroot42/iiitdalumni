@@ -28,3 +28,14 @@ To run the website on your PC:
 6. If want sample users, Do rake db:seed
 7. run rails server (ensure that no other server is running on localhost:3000)
 8. go to http://localhost:3000
+
+Code:
+'''bash
+sudo apt-get install rails
+git clone https://github.com/rjalfa/iiitdalumni.git
+cd iiitdalumni
+bundle install
+rake db:migrate
+rake db:seed   # Optional
+bundle exec rails server
+'''
