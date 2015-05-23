@@ -1,5 +1,6 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :class => "form-horizontal user" }) do |f| %>
+  <%= devise_error_messages! %>
   <fieldset>
   <legend>Sign up</legend>
   <div class="form-group">
@@ -53,7 +54,7 @@
   <div class="form-group">
     <%= f.label 'Profile pic URL', :class => 'col-lg-2 control-label' %>
     <div class="col-lg-10">
-      <%= f.text_field :dp_url, :class => 'form-control', :value => "https://circleapp.com/site-v4/img/circle_icon.png" %>
+      <%= f.text_field :dp_url, :class => 'form-control',:placeholder => "user-placeholder.jpg"%>
     </div>
   </div>
   <div class="form-group">
@@ -84,7 +85,7 @@
   <div class="form-group">
     <%= f.label :email , :class => 'col-lg-2 control-label' %>
     <div class="col-lg-10">
-    <%= f.email_field :email, autofocus: true , :class => 'form-control'%>
+    <%= f.email_field :email, :class => 'form-control'%>
     </div>
   </div>
 
@@ -105,7 +106,7 @@
     </div>
   </div>
 
-  <%= link_to "Reset", url_for(params) ,class: 'btn btn-warning pull-left'%>
+  <%= link_to "Reset", new_registration_path(resource_name) ,class: 'btn btn-warning pull-left'%>
   <%= f.submit "Sign up" ,class: 'btn btn-success pull-right'%>
   </fieldset>
 <% end %>

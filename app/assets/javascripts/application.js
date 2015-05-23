@@ -20,4 +20,10 @@
 $(document).on('page:load',function()
 {
 	$.material.init();
+	$(".col-lg-10 > .field_with_errors").parent().parent().toggleClass("has-error");
+});
+
+$(document).ready(function(){
+	$.material.init();
+	$(".col-lg-10 > .field_with_errors").parent().parent().toggleClass("has-error");
 });
