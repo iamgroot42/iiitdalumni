@@ -1,10 +1,5 @@
-BUGS LIST (ACTIVE):
--On opening the sign-up page and then reloading the same page, the 'Remember Me' checkbox dissapears.
--Button formatting on almost all pages is screwed up
--any URL is accepted for LinkedIn and Blog 
 
-# iiitdalumni
-IIITD Alumni Website
+# IIITD Alumni Website
 
 Home page : consists of recent news,activities and events (a carousel,maybe? ).The following links are present on the home page:
 -About IIITD AA
@@ -30,7 +25,7 @@ To run the website on your PC:
 8. go to http://localhost:3000
 
 Code:
-'''bash
+```bash
 sudo apt-get install rails
 git clone https://github.com/rjalfa/iiitdalumni.git
 cd iiitdalumni
@@ -38,4 +33,4 @@ bundle install
 rake db:migrate
 rake db:seed   # Optional
 bundle exec rails server
-'''
+```
