@@ -3,10 +3,10 @@
 
 
 <% @users.each do |x| %>
-<div class="panel panel-primary" style="width:30%;height:85px;float:left;margin:10px">
-	<%= image_tag x.dp_url,class: "pull-right img-rounded",width: "84px",height: "84px" %>
-    <div class="panel-heading">
-        <h3 class="panel-title">
+<div class="card hovercard container" style="width:30%;height:120px;float:left;margin:10px">
+	<%= image_tag x.dp_url,class: "pull-right ",width: "84px",height: "84px" %>
+    <div class="info">
+        <h3 class="title">
         <% if user_signed_in? %>
         	<%= link_to x.name,users_profile_path(id: x.id) %>
         <% else %>
