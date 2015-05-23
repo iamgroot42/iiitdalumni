@@ -2,11 +2,12 @@
 <div class="row">
   <div class="col-lg-8">
     <% if @posts.any? %>
+  <%= will_paginate @posts %>
       <% @posts.each do |post| %>
         <div class="container" style="border-bottom: 2px solid gray;max-width:800px;padding:20px;">
         <div class="row">
           <% if post.image_url.present? %>
-          <div class="col-md-6">
+          <div class="col-md-6" style="text-align:center">
             <%= image_tag(post.image_url,style: "max-height:250px;max-width:inherit;") %>
           </div>
           <div class="col-md-6">
@@ -20,7 +21,7 @@
             </p>
             <% if user_signed_in? %>
             <% if post.user_id == current_user.id %>
-              <%= link_to "Edit",edit_post_path(post) %> | <%= link_to "Delete", post_path(post), method: :delete %>
+              <%= link_to "Edit",edit_post_path(post),class: 'btn-sm btn-info'%> <%= link_to "Delete", post_path(post), method: :delete,class: 'btn-sm btn-danger', data: {confirm: 'Are you sure?'}%>
             <% end %><% end %>
           </div>
           <% else %>
@@ -31,11 +32,11 @@
               <br/> <%= time_ago_in_words(post.created_at) %> ago<br/><br/>
             </font>
             <p>
-              <%= truncate(post.content, :length => 150) %>... | <%= link_to "Read More",post_path(post) %>
+              <%= truncate(post.content, :length => 300) %>... | <%= link_to "Read More",post_path(post) %>
             </p>
             <% if user_signed_in? %>
             <% if post.user_id == current_user.id %>
-              <%= link_to "Edit",edit_post_path(post) %> | <%= link_to "Delete", post_path(post), method: :delete %>
+              <%= link_to "Edit",edit_post_path(post),class: 'btn-sm btn-info'%> <%= link_to "Delete", post_path(post), method: :delete,class: 'btn-sm btn-danger', data: {confirm: 'Are you sure?'}%>
             <% end %><% end %>
           </div>
           <% end %>
