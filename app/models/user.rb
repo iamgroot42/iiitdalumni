@@ -14,6 +14,6 @@ class User < ActiveRecord::Base
   before_save :set_dp
   
   def set_dp
-    self.dp_url = "user-placeholder.jpg" unless self.dp_url.present?
+    self.dp_url = "user-placeholder.png" unless self.dp_url.present?
   end 
 end
