@@ -1,38 +1,41 @@
-<%- model_class = User -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => @user.name %></h1>
-</div>
 
+<div class="row" style="padding:5px;">
+<div class="col-lg-3" style="text-align:center;padding-top:15px;border-right:1px solid #F0F0F0;">
+<h3><%=t '.title', :default => @user.name %></h3>
+  <%= image_tag @user.dp_url,style: "max-width:200px;max-height:200px" %> <br/><br/>
+  <% if @user.alumni %>
+    <div style="width:100px;margin:0 auto">
+      <i>  <%= @user.pursued %> Student from <%= @user.YOJ %> to <%= @user.YOL %></i>
+    </div>
+    <br/>
+  <% end %>
+  <div style="padding:2px;border:1px solid gray;border-radius:4px;width:150px;margin:0 auto;">
+    <%= link_to "mailto:"+@user.email,class: "btn-sm btn-default"  do %><i class="fa fa-envelope" style="font-size:25px"></i><% end %>
+    <%= link_to @user.ld_url,class: "btn-sm btn-default"  do %><i class="fa fa-linkedin" style="font-size:25px"></i><% end %>
+    <%= link_to @user.blog_url,class: "btn-sm btn-default"  do %><i class="fa fa-rss-square" style="font-size:25px"></i><% end %>
+  </div>
+  <br/>
+ 
+</div>
+<div class="col-lg-9">
+<br/>
+<br/>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <%= @user.description %>
+    </div>
+</div>
 <dl class="dl-horizontal">
-  <dt><strong><%= "Year of Joining" %>:</strong></dt>
-  <dd><%= @user.YOJ %></dd>
-  <dt><strong><%= "Year of Leaving" %>:</strong></dt>
-  <dd><%= @user.YOL %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:alumni) %>:</strong></dt>
-  <dd><%= @user.alumni %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:pursued) %>:</strong></dt>
-  <dd><%= @user.pursued %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @user.description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:current_designation) %>:</strong></dt>
+  <dt><strong><%= "Currently" %>:</strong></dt>
   <dd><%= @user.current_designation %></dd>
   <dt><strong><%= "Company/Institution" %>:</strong></dt>
   <dd><%= @user.company_or_institution %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dt><strong><%= "E-mail" %>:</strong></dt>
   <dd><%= @user.email %></dd>
-  <dt><strong><%= "Profile pic URL" %>:</strong></dt>
-  <dd><%= @user.dp_url %></dd>
-  <dt><strong><%= "Blog URL" %>:</strong></dt>
-  <dd><%= @user.blog_url %></dd>
-  <dt><strong><%= "LinkedIn URL" %>:</strong></dt>
-  <dd><%= @user.ld_url %></dd>
   <dt><strong><%= "Roll number" %>:</strong></dt>
   <dd><%= @user.rollno %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
+  <dt><strong><%= "Phone" %>:</strong></dt>
   <dd><%= @user.phone %></dd>
 </dl>
-
-<% #if @user.admin? %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_registration_path(@user), :class => 'btn btn-primary' %>
-<% #end %>
+</div>
+</div>
