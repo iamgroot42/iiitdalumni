@@ -22,9 +22,13 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :alumni, :class => 'col-lg-2 control-label' %>
+    <%= f.label " ", :class => 'col-lg-2 control-label' %>
     <div class="col-lg-10">
-      <%= f.check_box :alumni %>
+      <div class="checkbox" style="vertical-align:top;">
+          <label>
+          <%= f.check_box :alumni %> Are you an Alumnus?
+          </label>
+      </div>
     </div>
   </div>
   <div class="form-group">
