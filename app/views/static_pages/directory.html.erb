@@ -15,7 +15,9 @@
 <%= will_paginate @users %>
 <% @users.each do |x| %>
 <div class="card hovercard container" style="width:30%;height:120px;float:left;margin:10px">
-    <%= image_tag x.dp_url,class: "pull-right ",width: "84px",height: "84px" %>
+    <% if x.avatar.url.present? %>
+    <%= image_tag x.avatar.url,class: "pull-right ",width: "84px",height: "84px" %>
+    <% end %>
     <div class="info">
         <h3 class="title">
         <% if user_signed_in? %>

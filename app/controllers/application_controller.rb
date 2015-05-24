@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
   protected
   	def configure_permitted_parameters
-   	 devise_parameter_sanitizer.for(:sign_up) << :username << :posts << :dp_url << :blog_url << :ld_url << :rollno << :phone << :name << :YOJ << :YOL << :alumni << :pursued << :description << :current_designation << :company_or_institution
-   	 devise_parameter_sanitizer.for(:account_update) << :username << :posts <<:dp_url << :blog_url << :ld_url << :rollno << :phone << :name << :YOJ << :YOL << :alumni << :pursued << :description << :current_designation << :company_or_institution
+   	 devise_parameter_sanitizer.for(:sign_up) << :username << :posts << :blog_url << :ld_url << :rollno << :phone << :name << :YOJ << :YOL << :alumni << :pursued << :description << :current_designation << :company_or_institution << :avatar << :avatar_cache << :remove_avatar
+   	 devise_parameter_sanitizer.for(:account_update) << :username << :posts << :blog_url << :ld_url << :rollno << :phone << :name << :YOJ << :YOL << :alumni << :pursued << :description << :current_designation << :company_or_institution << :avatar << :avatar_cache << :remove_avatar
   	end
 end
