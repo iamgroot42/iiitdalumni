@@ -44,7 +44,7 @@
             <%= image_tag @post.avatar.url,style:"width:80px;height:80px;" %>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" value="1" name="user[remove_avatar]" id="user_remove_avatar" /> Remove post picture
+                    <%= f.check_box :remove_avatar %> Remove post picture
                 </label>
             </div>
         </div>
