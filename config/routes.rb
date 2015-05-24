@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'static_pages/contact'
 
   get 'static_pages/about'
-
+  get 'static_pages/render_dir'
   get 'static_pages/feedback'
 
   devise_for :users

@@ -1,7 +1,16 @@
-<h1 class="page-header"> Users </h1>
+<div class="pull-right">
+    <form class="form-inline" action="/static_pages/render_dir" accept-charset="UTF-8" method="get">
+        <input name="utf8" type="hidden" value="&#x2713;" />
+        <div class="form-group">
+            <label for="year_req" class="control-label">Select Year</label>
+            <%= select_tag :year_req, options_for_select((2012..Time.now.year).step(1).to_a.map{|s| ["#{s}", s]},@curr_year),:class => 'form-control' %>
+        </div>
+        <button type="submit" class="btn-sm btn-primary">GO</button>
+    </form>
+</div>
+<h1 class="page-header"> Alumni: Batch of <%= @curr_year %> </h1>
+<% if @users.any? %>
 <%= will_paginate @users %>
-<br>
-
 <% @users.each do |x| %>
 <div class="card hovercard container" style="width:30%;height:120px;float:left;margin:10px">
     <%= image_tag x.dp_url,class: "pull-right ",width: "84px",height: "84px" %>
@@ -16,10 +25,13 @@
     </div>
     <div class="panel-body">
         <% if x.alumni %>
-            <%= x.YOL %> Alumnus
+            <%= x.email %> 
         <% else %>
             <%= x.current_designation %> @ <%= x.company_or_institution %>
         <% end %>
     </div>
 </div>
+<% end %>
+<%else %>
+<h1 style="color:#A0A0A0">No Records</h1>
 <% end %>

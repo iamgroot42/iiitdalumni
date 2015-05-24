@@ -4,7 +4,22 @@ class StaticPagesController < ApplicationController
   end
 
   def directory
-    @users=User.paginate(page: params[:page], :per_page => 21).order(YOL: :desc)
+    @curr_year = Time.now.year
+    if params[:year_req].present?
+      all_users = User.where(alumni: true, YOL: params[:year_req])
+      @curr_year = params[:year_req]
+    else
+      all_users = User.where(alumni: true, YOL: @curr_year)
+      if all_users.empty?
+        all_users = User.where(alumni: true, YOL: @curr_year-1)
+        @curr_year -= 1
+      end
+    end
+    @users=all_users.paginate(page: params[:page], :per_page => 21).order(name: :asc)
+  end
+
+  def render_dir
+    redirect_to :action => "directory", :year_req => params[:year_req]
   end
 
   def contribute
