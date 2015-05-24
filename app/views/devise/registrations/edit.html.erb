@@ -23,9 +23,13 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :alumni, :class => 'col-lg-2 control-label' %>
+    <%= f.label " ", :class => 'col-lg-2 control-label' %>
     <div class="col-lg-10">
-      <%= f.check_box :alumni %>
+      <div class="checkbox" style="vertical-align:top;">
+          <label>
+          <%= f.check_box :alumni %> Are you an Alumnus?
+          </label>
+      </div>
     </div>
   </div>
   <div class="form-group">
@@ -59,7 +63,7 @@
             <%= image_tag current_user.avatar.url,style:"width:80px;height:80px;" %>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" value="1" name="user[remove_avatar]" id="user_remove_avatar" /> Remove current profile picture
+                    <%= f.check_box :remove_avatar %> Remove current profile picture
                 </label>
             </div>
         </div>
@@ -106,7 +110,7 @@
   <div class="form-group">
     <%= f.label :email , :class => 'col-lg-2 control-label' %>
     <div class="col-lg-10">
-    <%= f.email_field :email, autofocus: true , :class => 'form-control'%>
+    <%= f.email_field :email, :class => 'form-control'%>
     </div>
   </div>
 
