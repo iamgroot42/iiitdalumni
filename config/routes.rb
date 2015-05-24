@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get 'static_pages/render_dir'
   get 'static_pages/feedback'
 
+  get 'static_pages/news'
+
   devise_for :users
   get 'users/show'
   get 'users/profile'
