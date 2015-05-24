@@ -1,7 +1,7 @@
 
 <div class="row" style="padding:5px;">
 <div class="col-lg-3" style="text-align:center;padding-top:15px;">
-<h3><%=t '.title', :default => @user.name %></h3>
+<h3><%=t '.title', :default => @user.name.titleize %></h3>
   <%= image_tag @user.dp_url,style: "max-width:200px;max-height:200px" %> <br/><br/>
   <% if @user.alumni %>
     <div style="width:100px;margin:0 auto">
