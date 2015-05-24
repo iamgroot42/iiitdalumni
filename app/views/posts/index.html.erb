@@ -7,7 +7,7 @@
         <div class="container" style="border-bottom: 2px solid gray;max-width:800px;padding:20px;">
         <div class="row">
           <div class="col-md-6" style="text-align:center">
-            <%= image_tag @post.avatar.present? ? @post.avatar.url : "blog-placeholder.png",style: "max-height:280px;max-width:280px;" %>
+            <%= image_tag post.avatar.present? ? post.avatar.url : "blog-placeholder.jpg",style: "max-height:280px;max-width:280px;" %>
           </div>
           <div class="col-md-6">
             <h1 style="font-weight:bold;"><%= post.title %></h1>
@@ -30,4 +30,9 @@
       <h1 style="color:#A0A0A0;">No Posts yet</h1>
     <% end %>
   </div>
+  <% if user_signed_in? %>
+  <div class="col-lg-4" style="text-align:center;">
+    <%= link_to "Write new post",new_post_path,class: "btn btn-primary" %>
+  </div>
+  <% end %>
 </div>

@@ -1,5 +1,5 @@
 <%= form_for @post, :html => { :class => "form-horizontal post" } do |f| %>
-
+  <fieldset>
     <% if @post.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
@@ -14,15 +14,15 @@
       </div>
     </div>
   <% end %>
-  <div class="control-group">
-    <%= f.label :title, :class => 'control-label' %>
-    <div class="controls">
+  <div class="form-group">
+    <%= f.label :title, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
       <%= f.text_field :title, :class => 'form-control' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :content, :class => 'control-label' %>
-    <div class="controls">
+  <div class="form-group">
+    <%= f.label :content, :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
       <%= f.text_area :content, :class => 'form-control',:rows => 10 %>
     </div>
   </div>
@@ -33,7 +33,7 @@
     </div>
   </div>
  <div class="control-group">
-    <%= f.label 'Change Picture', :class => 'control-label' %>
+    <%= f.label 'Change/Add Picture', :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.file_field :avatar, :class => 'form-control' %>
     </div>
@@ -43,5 +43,5 @@
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
             posts_path, :class => 'btn btn-default' %>
-
+  </fieldset>
 <% end %>
