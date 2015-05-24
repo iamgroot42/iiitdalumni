@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150524101747) do
+ActiveRecord::Schema.define(version: 20150524111558) do
 
   create_table "posts", force: :cascade do |t|
     t.text     "content"
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 20150524101747) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "dp_url"
     t.string   "blog_url"
     t.string   "ld_url"
     t.string   "rollno"

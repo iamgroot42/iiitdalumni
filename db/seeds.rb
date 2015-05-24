@@ -24,7 +24,6 @@ password = "appledore"
 	user.phone = 9898989898
 	user.rollno = n+2013000
 	user.blog_url = Faker::Internet.url
-	user.dp_url = Faker::Company.logo
 	user.ld_url = Faker::Internet.url('linkedin.com')
 	user.save!
 end

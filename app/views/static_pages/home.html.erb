@@ -9,7 +9,7 @@ Welcome to IIITD Alumni Portal
   <div class="col-lg-8">
     <% if @ap.any? %>
       <% @ap.each do |post| %>
-        <div class="container" style="border-bottom: 2px solid gray;max-width:800px;padding:20px;">
+        <div class="container" style="max-width:800px;padding:20px;">
         <div class="row">
           <div class="col-md-6" style="text-align:center">
             <%= image_tag(post.image_url,style: "max-height:280px;max-width:280px;") %>
@@ -34,6 +34,7 @@ Welcome to IIITD Alumni Portal
       <h1 style="color:#A0A0A0;">No News yet</h1>
     <% end %>
   </div>
+  <div class="col-lg-4">&nbsp;</div>
 </div>
 <h1> From the Blog </h1>
 <hr>
