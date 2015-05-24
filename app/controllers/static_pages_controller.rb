@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
 
   def home
     @ap=Post.where(:user_id => 1).last(3)
-    @up=Post.where.not(:user_id => 1).last(2)
+    @up=Post.where.not(:user_id => 1).last(1)
   end
 
   def directory

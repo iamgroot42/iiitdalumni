@@ -2,11 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.overlay
- {
-     position: absolute;
-     background-color: rgba(0, 0, 0, 0);
-     z-index: 9999;
-     color: white;
-     display: inline-block;
- }
+#home-img {
+ 	background-image: url("../assets/home-back.jpg");
+ 	text-align:center;
+ 	color:white;
+ 	font-size:50px;
+ 	font-weight:bold;
+ 	font-family:"aaargh";
+ 	padding-top:100px;
+ 	padding-bottom:100px;
+}

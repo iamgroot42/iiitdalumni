@@ -1,4 +1,10 @@
-<h1>Welcome to the IIITD Alumni Portal</h1>
+<div class="row">
+<div class="col-lg-12" id="home-img">
+<h1 style="color:white;font-size:60px;font-weight:bold;font-family:'aaargh';">
+Welcome to IIITD Alumni Portal
+</h1>
+</div>
+</div>
 <div class="row">
   <div class="col-lg-8">
     <% if @ap.any? %>
@@ -25,15 +31,17 @@
         </div>
       <% end -%>
     <% else %>
-      <h1 style="color:#A0A0A0;">No Posts yet</h1>
+      <h1 style="color:#A0A0A0;">No News yet</h1>
     <% end %>
   </div>
 </div>
+<h1> From the Blog </h1>
+<hr>
 <div class="row">
   <div class="col-lg-8">
     <% if @up.any? %>
       <% @up.each do |post| %>
-        <div class="container" style="border-bottom: 2px solid gray;max-width:800px;padding:20px;">
+        <div class="container" style="max-width:800px;padding:20px;">
         <div class="row">
           <div class="col-md-6" style="text-align:center">
             <%= image_tag(post.image_url,style: "max-height:280px;max-width:280px;") %>

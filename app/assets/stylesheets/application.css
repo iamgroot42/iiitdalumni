@@ -20,3 +20,8 @@
 /*
     Body stylings
 */
+
+@font-face {
+    font-family: "aaargh";
+    src: url(../assets/Aaargh.ttf);
+}
