@@ -1,8 +1,10 @@
 <div class="pull-right">
     <form class="form-inline" action="/static_pages/render_dir" accept-charset="UTF-8" method="get">
+    <br><br><br>
         <input name="utf8" type="hidden" value="&#x2713;" />
         <div class="form-group">
             <label for="year_req" class="control-label">Select Year</label>
+
             <%= select_tag :year_req, options_for_select((2012..Time.now.year).step(1).to_a.map{|s| ["#{s}", s]},@curr_year),:class => 'form-control' %>
         </div>
         <button type="submit" class="btn-sm btn-primary">GO</button>
