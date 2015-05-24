@@ -1,28 +1,25 @@
-<h1> Users </h1>
+<h1 class="page-header"> Users </h1>
+<%= will_paginate @users %>
 <br>
-
 
 <% @users.each do |x| %>
 <div class="card hovercard container" style="width:30%;height:120px;float:left;margin:10px">
-	<%= image_tag x.dp_url,class: "pull-right ",width: "84px",height: "84px" %>
+    <%= image_tag x.dp_url,class: "pull-right ",width: "84px",height: "84px" %>
     <div class="info">
         <h3 class="title">
         <% if user_signed_in? %>
-        	<%= link_to x.name,users_profile_path(id: x.id) %>
+            <%= link_to x.name,users_profile_path(id: x.id) %>
         <% else %>
-        	<%= x.name %>
+            <%= x.name %>
         <% end %>
         </h3>
     </div>
     <div class="panel-body">
         <% if x.alumni %>
-        	<%= x.YOL %> Alumnus
+            <%= x.YOL %> Alumnus
         <% else %>
-        	<%= x.current_designation %> @ <%= x.company_or_institution %>
+            <%= x.current_designation %> @ <%= x.company_or_institution %>
         <% end %>
     </div>
 </div>
 <% end %>
-
-
-
