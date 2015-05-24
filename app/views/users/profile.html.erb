@@ -3,7 +3,7 @@
 <div class="col-lg-3" style="text-align:center;padding-top:15px;">
 <h3><%=t '.title', :default => @user.name.titleize %></h3>
 <br/>
-  <%= image_tag @user.dp_url,style: "max-width:200px;max-height:200px" %> <br/><br/>
+  <%= image_tag @user.avatar.url.present? ? @user.avatar.url : "user-placeholder.png" ,style: "max-width:200px;max-height:200px" %> <br/><br/>
   <% if @user.alumni %>
     <div style="width:100px;margin:0 auto">
       <i>  <%= @user.pursued %> Student from <%= @user.YOJ %> to <%= @user.YOL %></i>

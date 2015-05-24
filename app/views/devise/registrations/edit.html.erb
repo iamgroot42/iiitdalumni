@@ -58,6 +58,32 @@
       <%= f.text_field :dp_url, :class => 'form-control' %>
     </div>
   </div>
+  <% if current_user.avatar.present? %>
+  <div class="form-group">
+        <%= f.label "Profile Picture", :class => 'col-lg-2 control-label' %>
+        <div class="col-lg-10">
+            <%= image_tag current_user.avatar.url,style:"width:80px;height:80px;" %>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="1" name="user[remove_avatar]" id="user_remove_avatar" /> Remove current profile picture
+                </label>
+            </div>
+        </div>
+    </div>
+  <div class="form-group">
+    <%= f.label 'Change Picture', :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.file_field :avatar, :class => 'form-control' %>
+    </div>
+  </div>
+  <% else %>
+  <div class="form-group">
+    <%= f.label 'Profile Picture', :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.file_field :avatar, :class => 'form-control' %>
+    </div>
+  </div>
+  <% end %>
   <div class="form-group">
     <%= f.label :blog_url, :class => 'col-lg-2 control-label' %>
     <div class="col-lg-10">

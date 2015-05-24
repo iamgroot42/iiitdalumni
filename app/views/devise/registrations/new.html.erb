@@ -1,5 +1,5 @@
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :class => "form-horizontal user" }) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :class => "form-horizontal user",:multipart => true}) do |f| %>
   <%= devise_error_messages! %>
   <fieldset>
   <legend>Sign up</legend>
@@ -55,6 +55,12 @@
     <%= f.label 'Profile pic URL', :class => 'col-lg-2 control-label' %>
     <div class="col-lg-10">
       <%= f.text_field :dp_url, :class => 'form-control',:placeholder => "user-placeholder.png"%>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Profile Picture', :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.file_field :avatar, :class => 'form-control' %>
     </div>
   </div>
   <div class="form-group">
