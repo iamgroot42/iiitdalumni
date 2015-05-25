@@ -15,11 +15,12 @@
             <font color="gray">
                <%= time_ago_in_words(post.created_at) %> ago<br/><br/>
             </font>
-            <p>
+            <td>
               <%= truncate(post.content, :length => 150) %>... | <%= link_to "Read More",post_path(post) %>
-            </p>
+            </td>
             <% if user_signed_in? %>
             <% if current_user.id == 1 %>
+            <br><br>
               <%= link_to "Edit",edit_post_path(post),class: 'btn-sm btn-info'%> <%= link_to "Delete", post_path(post), method: :delete,class: 'btn-sm btn-danger', data: {confirm: 'Are you sure?'}%>
             <% end %><% end %>
           </div>

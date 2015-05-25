@@ -1,5 +1,10 @@
+<% if @post.user_id !=1 %>
 <h1 style="font-weight:bold;"> <%= @post.title %>  <h3><span class="label label-default">By: <%= User.find(@post.user_id).name%></span></h3></h1>
-<h5><span class="label label-info"><%= time_ago_in_words(@post.created_at) %></span></h5>
+<% else %>
+<h1 style="font-weight:bold;"> <%= @post.title %></h1>
+<% end %>
+
+<h4><span class="label label-info"><%= time_ago_in_words(@post.created_at) %></span></h4>
 <hr>
 
 <% if @post.avatar.present? %>
