@@ -6,53 +6,45 @@ Welcome to IIITD Alumni Portal
 </div>
 </div>
 <br><br>
-<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 600px;" >
+<% if @ap.any? %>
+<div class="row"><div class="col-lg-7">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <% (0..@ap.count-1).each do |i| %>
+    <li data-target="#myCarousel" data-slide-to="<%= i %>" class="<%= 'active' if i == 0 %>"></li>
+    <% end %>
   </ol>
-  <% #not used a lop, as it's only 5 items :3 %>
   <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <%= image_tag(@ap.first.avatar.present? ? @ap.first.avatar.url : "blog-placeholder.jpg",style: "max-height:600px;max-width:600px;") %>
+    <% @ap.each do |post| %>
+    <div class="item<%= ' active'if post == @ap.first %>">
+      <center><%= image_tag(post.avatar.present? ? post.avatar.url : "blog-placeholder.jpg",style: "max-height:600px;max-width:600px;opacity:80%") %><center/>
       <div class="carousel-caption">
-        <h3><%= @ap.first.title %></h3>
-        <p><%= truncate(@ap.first.content, :length => 50) %>... <br><br> <%= link_to "Read More",post_path(@ap.first),:class => "btn btn-sm btn-info" %></p>
+        <h3><%= post.title %></h3>
+        <p><%= truncate(post.content, :length => 50) %>... <br><br> <%= link_to "Read More",post_path(post),:class => "btn btn-sm btn-info" %></p>
       </div>
     </div>
-    <div class="item">
-      <%= image_tag(@ap.second.avatar.present? ? @ap.second.avatar.url : "blog-placeholder.jpg",style: "max-height:600px;max-width:600px;") %>
-      <div class="carousel-caption">
-        <h3><%= @ap.second.title %></h3>
-        <p><%= truncate(@ap.second.content, :length => 50) %>... <br><br> <%= link_to "Read More",post_path(@ap.second),:class => "btn btn-sm btn-info"%></p>
-      </div>
-    </div>
-    <div class="item">
-      <%= image_tag(@ap.third.avatar.present? ? @ap.third.avatar.url : "blog-placeholder.jpg",style: "max-height:600px;max-width:600px;") %>
-      <div class="carousel-caption">
-        <h3><%= @ap.third.title %></h3>
-        <p><%= truncate(@ap.third.content, :length => 50) %>... <br><br> <%= link_to "Read More",post_path(@ap.third),:class => "btn btn-sm btn-info"%></p>
-      </div>
-    </div>
-
-    <div class="item">
-    <%= image_tag(@up.first.avatar.present? ? @up.first.avatar.url : "blog-placeholder.jpg")%>
-    <div class="carousel-caption">
-      <h3><%= @up.first.title %></h3>
-      <p><%= truncate(@up.first.content, :length => 50) %>... <br><br> <%= link_to "Read More",post_path(@up.first),:class => "btn btn-sm btn-info"%></p>
-    </div>
-  </div>
-   
-
+    <% end %>
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="fa fa-chevron-left glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
   <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="fa fa-chevron-right glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
 </div>
-    
+</div>
+</div>
+<div class="col-lg-2">
+<h1 style="color:#40D0E0;font-size:70px">Recent News</h1>
+</div>
+<div class="col-lg-1">
+&nbsp;
+</div>
+<div class="col-lg-2" style="transform: scale(-1, 1);">
+<h1 style="color:#4FEFFF;font-size:70px">Recent News</h1>
+</div>
+</div>
+<% else %>  
+<center><h1>No News / Posts to show</h1></center>
+<% end %>
