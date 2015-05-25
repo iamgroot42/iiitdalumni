@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'error_pages/not_found_error'
+
+  get 'error_pages/internal_error'
+
+  get 'error_pages/misc_error'
+
   resources :posts
 
   root 'static_pages#home'
