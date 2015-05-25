@@ -7,16 +7,16 @@ Welcome to IIITD Alumni Portal
 </div>
 <br><br>
 <% if @ap.any? %>
-<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 600px;" >
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;" >
   <ol class="carousel-indicators">
     <% (0..@ap.count-1).each do |i| %>
-    <li data-target="#myCarousel" data-slide-to="<%= i %>" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="<%= i %>" class="<%= 'active' if i == 0 %>"></li>
     <% end %>
   </ol>
   <div class="carousel-inner" role="listbox">
     <% @ap.each do |post| %>
-    <div class="item">
-      <%= image_tag(post.avatar.present? ? post.avatar.url : "blog-placeholder.jpg",style: "max-height:600px;max-width:600px;") %>
+    <div class="item<%= ' active'if post == @ap.first %>">
+      <center><%= image_tag(post.avatar.present? ? post.avatar.url : "blog-placeholder.jpg",style: "max-height:600px;max-width:600px;opacity:80%") %><center/>
       <div class="carousel-caption">
         <h3><%= post.title %></h3>
         <p><%= truncate(post.content, :length => 50) %>... <br><br> <%= link_to "Read More",post_path(post),:class => "btn-sm btn-info" %></p>
@@ -24,12 +24,14 @@ Welcome to IIITD Alumni Portal
     </div>
     <% end %>
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="fa fa-chevron-left glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
   <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="fa fa-chevron-right glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
 </div>
-<% end %>  
+<% else %>  
+<center><h1>No News / Post to show</h1></center>
+<% end %>

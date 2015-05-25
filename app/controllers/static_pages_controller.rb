@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def home
-    @ap=Post.last(3)
+    @ap=Post.where(:user_id => 1).last(3)
     @up=Post.where.not(:user_id => 1).last(1)
   end
 
