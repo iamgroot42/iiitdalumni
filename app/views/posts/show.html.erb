@@ -1,12 +1,10 @@
-<h1> <%= @post.title %> </h1>
+<h1> <%= @post.title %> <h5><span class="label label-default">By: <%= User.find(@post.user_id).name%></span></h5></h1>
+<span class="label label-info"><%= time_ago_in_words(@post.created_at) %></span>
 <hr>
 
 <% if @post.avatar.present? %>
 <%= image_tag @post.avatar.url, class: 'pull-left',style: "margin:5px;max-height:250px;max-width:395px;" %><% end %>
 <font color="#57575757">
-<%= User.find(@post.user_id).name %>
-<br/> <%= time_ago_in_words(@post.created_at) %> <br/>
-<br/>
 </font>
 
 <p style="white-space: pre-wrap;">
