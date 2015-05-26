@@ -10,30 +10,66 @@
     <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-                <li><%= link_to "News",static_pages_news_path %></li>
-                <li class="dropdown"><a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+                <li><%= link_to static_pages_news_path do %>
+                    <i class="fa fa-newspaper-o"></i> News
+                    <% end %>
+                </li>
+                <li class="dropdown"><a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-rss"></i> Blog</a>
                     <ul class="dropdown-menu">
-                        <li><%= link_to "Write new post", new_post_path %></li>
-                        <li><%= link_to "See All posts", posts_path %></li>
+                        <li><%= link_to new_post_path do %>
+                        <i class="mdi-content-create"></i> Write new post<% end %>
+                        </li>
+                        <li><%= link_to posts_path do %>
+                        <i class="mdi-av-my-library-books"></i> See All posts
+                        <% end %>
+                        </li>
                     </ul></li>
-                <li><%= link_to "Directory",static_pages_directory_path %></li>
-                <li><%= link_to "Give Back",static_pages_contribute_path %></li>
+                <li>
+                <li><%= link_to static_pages_directory_path do %>
+                    <i class="mdi-communication-contacts"></i> Directory
+                    <% end %>
+                </li>
+                <li><%= link_to static_pages_contribute_path do %>
+                    <i class="fa fa-university"></i> Give Back
+                    <% end %>
+                </li>
                 <li class="dropdown">
-                    <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+                    <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Account</a>
                     <ul class="dropdown-menu">
-                        <li><%= link_to "Profile", users_show_path %></li>
-                        <li><%= link_to "Settings", edit_registration_path(current_user) %></li>
+                        <li><%= link_to users_show_path do%>
+                        <i class="fa fa-info-circle"></i> Profile <% end %>
+                        </li>
+                        <li><%= link_to edit_registration_path(current_user) do %>
+                            <i class="fa fa-cog"></i> Settings
+                            <% end %>
+                        </li>
                         <li class="divider"></li>
-                        <li><%= link_to "Log out", destroy_user_session_path, method: "delete" %></li>
+                        <li><%= link_to destroy_user_session_path, method: "delete" do %>
+                            <i class="fa fa-sign-out"></i> Log out
+                            <% end %>
+                        </li>
                     </ul>
                 </li>
                     
             <% else %>
-                <li><%= link_to "News",static_pages_news_path %></li>
-                <li><%= link_to "Blog",posts_path %></li>
-                <li><%= link_to "Directory",static_pages_directory_path %></li>
-                <li><%= link_to "Contact Us",static_pages_contact_path %></li>
-                <li><%= link_to "Login", new_session_path(:user) %></li>
+                <li><%= link_to static_pages_news_path do %>
+                    <i class="fa fa-newspaper-o"></i> News
+                    <% end %>
+                </li>
+                <li><%= link_to posts_path do %>
+                <i class="fa fa-rss"></i> Blog<% end %>
+                </li>
+                <li><%= link_to static_pages_directory_path do %>
+                    <i class="mdi-communication-contacts"></i> Directory
+                    <% end %>
+                </li>
+                <li><%= link_to static_pages_contribute_path do %>
+                    <i class="fa fa-university"></i> Give Back
+                    <% end %>
+                </li>
+                <li><%= link_to new_session_path(:user) do %>
+                <i class="fa fa-sign-in"></i> Login<% end %>
+                </li>
             <% end %>
         </ul>
     </div>
