@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
   def home
     @ap=Post.where(:user_id => 1).first(3)
     @up=Post.where.not(:user_id => 1).first(1)
+    @ap=@ap+@up
   end
 
   def directory
