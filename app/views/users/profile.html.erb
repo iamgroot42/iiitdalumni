@@ -11,9 +11,9 @@
     <br/>
   <% end %>
   <div style="padding:2px;border:1px solid gray;border-radius:4px;width:150px;margin:0 auto;">
-    <%= link_to "mailto:"+@user.email,class: "btn-sm btn-default"  do %><i class="fa fa-envelope" style="font-size:25px"></i><% end %>
-    <%= link_to @user.ld_url,class: "btn-sm btn-default"  do %><i class="fa fa-linkedin" style="font-size:25px"></i><% end %>
-    <%= link_to @user.blog_url,class: "btn-sm btn-default"  do %><i class="fa fa-rss-square" style="font-size:25px"></i><% end %>
+    <% if @user.email.present? %> <%= link_to "mailto:"+@user.email,class: "btn-sm btn-default"  do %><i class="fa fa-envelope" style="font-size:25px"></i><% end %> <% end %>
+    <% if @user.ld_url.present? %><%= link_to @user.ld_url,class: "btn-sm btn-default"  do %><i class="fa fa-linkedin" style="font-size:25px"></i><% end %> <% end %>
+    <% if @user.blog_url.present? %><%= link_to @user.blog_url,class: "btn-sm btn-default"  do %><i class="fa fa-rss-square" style="font-size:25px"></i><% end %> <% end %>
   </div>
   <br/>
  

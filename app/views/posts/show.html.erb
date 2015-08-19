@@ -4,7 +4,7 @@
 <h1 style="font-weight:bold;"> <%= @post.title %></h1>
 <% end %>
 
-<h4><span class="label label-info"><%= time_ago_in_words(@post.created_at) %></span></h4>
+<h4><span class="label label-info"><%= time_ago_in_words(@post.created_at) %> ago</span></h4>
 <hr>
 
 <% if @post.avatar.present? %>
