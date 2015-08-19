@@ -26,7 +26,13 @@ To run the website on your PC:
 
 Code:
 ```bash
-sudo apt-get install rails
+sudo apt-get update
+sudo apt-get install curl
+\curl -L https://get.rvm.io | bash -s stable
+source ~/.rvm/scripts/rvm
+rvm install ruby-2.2.2
+rvm use ruby --default
+gem install bundle
 git clone https://github.com/rjalfa/iiitdalumni.git
 cd iiitdalumni
 bundle install
