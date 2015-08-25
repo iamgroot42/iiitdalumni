@@ -9,7 +9,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :bg_pic
       t.string :title
       t.text :organizer
-      t.email :contact
+      t.string :contact
 
       t.timestamps null: false
     end

@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150524121732) do
+ActiveRecord::Schema.define(version: 20150825060033) do
+
+  create_table "events", force: :cascade do |t|
+    t.datetime "start"
+    t.datetime "end"
+    t.string   "where"
+    t.string   "fb_link"
+    t.text     "description"
+    t.string   "bg_pic"
+    t.string   "title"
+    t.text     "organizer"
+    t.string   "contact"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.text     "content"
