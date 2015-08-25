@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2015-08-25 11:30:33
+  end: 2015-08-25 11:30:33
+  where: MyString
+  fb_link: MyString
+  description: MyText
+  bg_pic: MyString
+  title: MyString
+  organizer: MyText
+  contact: 
+
+two:
+  start: 2015-08-25 11:30:33
+  end: 2015-08-25 11:30:33
+  where: MyString
+  fb_link: MyString
+  description: MyText
+  bg_pic: MyString
+  title: MyString
+  organizer: MyText
+  contact: 

@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'events/create'
+
+  get 'events/show'
+
+  get 'events/index'
+
+  get 'events/delete'
+
+  get 'events/modify'
+
   get 'error_pages/not_found_error'
 
   get 'error_pages/internal_error'
