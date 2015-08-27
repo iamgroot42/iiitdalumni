@@ -14,47 +14,68 @@
       </div>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :start %><br>
-    <%= f.datetime_select :start %>
+  <div class="form-group">
+    <%= f.label :start , :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.datetime_select :start, :class => "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :end %><br>
-    <%= f.datetime_select :end %>
+  <div class="form-group">
+    <%= f.label :end , :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.datetime_select :end, :class => "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <%= f.label :title , :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.text_field :title , :class => "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :summary %><br>
-    <%= f.text_area :summary %>
+  <div class="form-group">
+    <%= f.label :summary , :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.text_area :summary , :class => "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="form-group">
+    <%= f.label :description , :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.text_area :description , :class => "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+  <div class="form-group">
+    <%= f.label :user_id , :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.text_field :user_id , :class => "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :contact %><br>
-    <%= f.text_area :contact %>
+  <div class="form-group">
+    <%= f.label :contact , :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.text_area :contact , :class => "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :venue %><br>
-    <%= f.text_area :venue %>
+  <div class="form-group">
+    <%= f.label :venue , :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.text_area :venue , :class => "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :fblink %><br>
-    <%= f.text_field :fblink %>
+  <div class="form-group">
+    <%= f.label :fblink , :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.text_field :fblink , :class => "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :photo %><br>
-    <%= f.text_field :photo %>
+  <div class="form-group">
+    <%= f.label :photo , :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.text_field :photo , :class => "form-control" %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.submit nil,:class => "btn btn-primary" %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            posts_path, :class => 'btn btn-default' %>
+</fieldset>
 <% end %>
