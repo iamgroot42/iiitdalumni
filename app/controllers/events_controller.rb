@@ -24,6 +24,8 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+    # params[:event][:start] = params[:event][:start].to_datetime
+    # params[:event][:end] = params[:event][:end].to_datetime
     @event = Event.new(event_params)
 
     respond_to do |format|
@@ -69,6 +71,21 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
+      # params[:event][:start] = params[:event][:start].to_datetime
+      # params[:event][:end] = params[:event][:end].to_datetime
+      t = (params[:start_str]+" IST").to_datetime
+      params["event"]["start(1i)"] = t.strftime("%Y")
+      params[:event]["start(2i)"] = t.strftime("%m")
+      params[:event]["start(3i)"] = t.strftime("%d")
+      params[:event]["start(4i)"] = t.strftime("%H")
+      params[:event]["start(5i)"] = t.strftime("%M")
+      t = (params[:end_str]+" IST").to_datetime
+      params[:event]["end(1i)"] = t.strftime("%Y")
+      params[:event]["end(2i)"] = t.strftime("%m")
+      params[:event]["end(3i)"] = t.strftime("%d")
+      params[:event]["end(4i)"] = t.strftime("%H")
+      params[:event]["end(5i)"] = t.strftime("%M")
+      puts params
       params.require(:event).permit(:start, :end, :title, :summary, :description, :user_id, :contact, :venue, :fblink, :photo)
     end
 end

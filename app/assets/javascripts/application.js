@@ -15,15 +15,19 @@
 //= require bootstrap
 //= require material
 //= require turbolinks
+//= require moment
+//= require bootstrap-datetimepicker
 //= require_tree .
 
-$(document).on('page:load',function()
+function Main()
 {
 	$.material.init();
 	$(".col-lg-10 > .field_with_errors").parent().parent().toggleClass("has-error");
-});
+	$('.datetimepicker').datetimepicker({
+		format : 'DD-MM-YYYY HH:MM'
+	});
+}
 
-$(document).ready(function(){
-	$.material.init();
-	$(".col-lg-10 > .field_with_errors").parent().parent().toggleClass("has-error");
-});
+$(document).on('page:load',Main);
+
+$(document).ready(Main);
