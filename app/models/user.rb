@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   validates :ld_url, :allow_blank => true, format: { with: /(ftp|http|https):\/\/?((www|\w\w)\.)?linkedin.com(\w+:{0,1}\w*@)?(\S+)(:([0-9])+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/ }
   validates_processing_of :avatar
   has_many :posts
+  has_many :events
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 end

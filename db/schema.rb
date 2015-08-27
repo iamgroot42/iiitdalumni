@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150524121732) do
+ActiveRecord::Schema.define(version: 20150827034403) do
+
+  create_table "events", force: :cascade do |t|
+    t.datetime "start"
+    t.datetime "end"
+    t.string   "title"
+    t.text     "summary"
+    t.text     "description"
+    t.integer  "user_id"
+    t.text     "cpntact"
+    t.text     "venue"
+    t.string   "fblink"
+    t.string   "photo"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "events", ["user_id"], name: "index_events_on_user_id"
 
   create_table "posts", force: :cascade do |t|
     t.text     "content"

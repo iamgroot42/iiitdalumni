@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :events
+
   get 'error_pages/not_found_error'
 
   get 'error_pages/internal_error'
