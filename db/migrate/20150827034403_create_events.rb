@@ -7,7 +7,7 @@ class CreateEvents < ActiveRecord::Migration
       t.text :summary
       t.text :description
       t.references :user, index: true
-      t.text :cpntact
+      t.text :contact
       t.text :venue
       t.string :fblink
       t.string :photo
