@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
     @ap=Post.where(:user_id => 1).first(3)
     @up=Post.where.not(:user_id => 1).first(1)
     @ap=@ap+@up
+    @upcom=Event.first(3)
   end
 
   def directory
