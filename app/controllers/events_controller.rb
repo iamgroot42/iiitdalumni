@@ -73,13 +73,13 @@ class EventsController < ApplicationController
     def event_params
       # params[:event][:start] = params[:event][:start].to_datetime
       # params[:event][:end] = params[:event][:end].to_datetime
-      t = (params[:start_str]+" IST").to_datetime
+      t = params[:start_str].to_datetime
       params["event"]["start(1i)"] = t.strftime("%Y")
       params[:event]["start(2i)"] = t.strftime("%m")
       params[:event]["start(3i)"] = t.strftime("%d")
       params[:event]["start(4i)"] = t.strftime("%H")
       params[:event]["start(5i)"] = t.strftime("%M")
-      t = (params[:end_str]+" IST").to_datetime
+      t = params[:end_str].to_datetime
       params[:event]["end(1i)"] = t.strftime("%Y")
       params[:event]["end(2i)"] = t.strftime("%m")
       params[:event]["end(3i)"] = t.strftime("%d")
