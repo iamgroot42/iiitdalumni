@@ -1,5 +1,5 @@
 
-# IIITD Alumni Website
+# IIITD Alumni Website (not deployed)
 
 Home page : consists of recent news,activities and events (a carousel,maybe? ).The following links are present on the home page:
 -About IIITD AA
